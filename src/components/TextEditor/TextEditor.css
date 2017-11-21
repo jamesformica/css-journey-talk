@@ -1,9 +1,11 @@
 .textarea {
-  padding: 10px;
+  font-family: 'Inconsolata', monospace;
+  letter-spacing: 1px;
+  padding: 20px;
   width: 100%;
   border: 4px solid black;
   margin-right: 20px;
-  font-family: monospace;
   font-size: 1.4rem;
   resize: none;
+  outline: none;
 }
