@@ -1,0 +1,13 @@
+.preview {
+  width: 100%;
+  border: 4px dashed black;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.object {
+  transition: 0.4s;
+}
