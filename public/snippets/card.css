@@ -1,0 +1,34 @@
+.card {
+  width: 200px;
+  font-size: 1rem;
+  text-align: left;
+  background: white;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.card__image {
+  width: 100%;
+  height: 200px;
+  background-image: url('/images/sloth-astro.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+
+.card__info {
+  padding: 10px;
+  display: inline-block;
+}
+
+.card__info::before {
+  content: 'Damian Slothington';
+}
+
+.card__info__desc {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.card__info__desc::before {
+  content: 'Loves short walks on the beach and sleeping constantly.';
+}

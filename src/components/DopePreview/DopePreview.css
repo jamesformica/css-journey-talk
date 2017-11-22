@@ -1,7 +1,9 @@
 .preview {
+  position: relative;
   width: 100%;
   border: 4px dashed black;
   background-color: white;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;

@@ -13,17 +13,21 @@ class SnappyEditor extends Component {
   }
 
   componentWillMount() {
+    this.getFile(this.props.snippet, text => {
+      this.setState({
+        css: text,
+        objectClassNames: this.getObjectClassNames(text)
+      });
+    });
+  }
+
+  getFile(file, callback) {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", this.props.snippet, true);
+    rawFile.open("GET", file, true);
     rawFile.onreadystatechange = () => {
       if (rawFile.readyState === 4) {
         if (rawFile.status === 200 || rawFile.status === 0) {
-          const text = rawFile.responseText.trim();
-          this.setState(
-            {
-              css: text,
-              objectClassNames: this.getObjectClassNames(text)
-            });
+          callback(rawFile.responseText.trim());
         }
       }
     };
@@ -31,10 +35,18 @@ class SnappyEditor extends Component {
   }
 
   getObjectClassNames(text) {
-    const classes = text.split(".");
-    return classes.map(s => {
-      return s.substring(0, s.indexOf(" "));
-    }).filter(c => c.length > 0);
+    const classes = [];
+    let nextIndex = text.indexOf(".", 0);
+    let bracketIndex = text.indexOf("{", nextIndex);
+
+    while(nextIndex >= 0 && bracketIndex >= 0) {
+      classes.push(text.substring(nextIndex + 1, bracketIndex).trim());
+
+      nextIndex = text.indexOf(".", bracketIndex);
+      bracketIndex = text.indexOf("{", nextIndex);
+    }
+
+    return classes;
   }
 
   textareaChange(text) {
