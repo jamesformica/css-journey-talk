@@ -1,0 +1,72 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 250px;
+  height: 100%;
+  background: lightgray;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  transform: translateX(-50%);
+}
+
+.page__banner {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  background: #DC143C;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.page__banner::before {
+  content: 'I AM A BANNER!';
+}
+
+.page__banner::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #78091F;
+  border-right-color: #78091F;
+}
+
+.page:hover .page__banner {
+  animation-name: cycle;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.page:hover .page__banner::after {
+  animation-name: cycle-darker;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes cycle {
+  0% { background: #DC143C; }
+  25% { background: #3B54D8; }
+  50% { background: #84E87F; }
+  75% { background: #FFF144; }
+  100% { background: #DC143C; }
+}
+
+@keyframes cycle-darker {
+  0% { border-top-color: #78091F; border-right-color: #78091F; }
+  25% { border-top-color: #1D2A70; border-right-color: #1D2A70; }
+  50% { border-top-color: #3B6A3A; border-right-color: #3B6A3A; }
+  75% { border-top-color: #6C661B; border-right-color: #6C661B; }
+  100% { border-top-color: #78091F; border-right-color: #78091F; }
+}

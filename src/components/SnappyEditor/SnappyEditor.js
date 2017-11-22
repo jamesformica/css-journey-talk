@@ -42,7 +42,11 @@ class SnappyEditor extends Component {
     while(nextIndex >= 0 && bracketIndex >= 0) {
       classes.push(text.substring(nextIndex + 1, bracketIndex).trim());
 
-      nextIndex = text.indexOf(".", bracketIndex);
+      // grab the closing bracket so we skip anything that might have a '.' in
+      // it such as an image extension or opacity
+      const closingIndex = text.indexOf("}", bracketIndex);
+
+      nextIndex = text.indexOf(".", closingIndex);
       bracketIndex = text.indexOf("{", nextIndex);
     }
 
