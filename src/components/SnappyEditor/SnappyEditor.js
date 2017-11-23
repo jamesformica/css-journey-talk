@@ -21,6 +21,12 @@ class SnappyEditor extends Component {
     });
   }
 
+  /**
+   * Makes an Http GET request to the location of the file then calls
+   * the callback function passing through the contents of the file.
+   * @param {string} file the public url of a file to retrieve
+   * @param {*} callback a function to call when the request is done
+   */
   getFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, true);
@@ -34,28 +40,50 @@ class SnappyEditor extends Component {
     rawFile.send(null);
   }
 
+  /**
+   * Traverses the CSS file looking for classes and returns back an
+   * array of valid classes. A valid class has a length > 0 and does
+   * not have a colon (':') in it as we do not want to render pseudo
+   * classes.
+   * @param {string} text the css file to find classes in
+   */
   getObjectClassNames(text) {
     const classes = [];
-    let nextIndex = text.indexOf(".", 0);
-    let bracketIndex = text.indexOf("{", nextIndex);
+    let nextClass = this.findNextClass(text, 0);
 
-    while (nextIndex >= 0 && bracketIndex >= 0) {
-      const potentialClass = text.substring(nextIndex + 1, bracketIndex).trim();
+    while (nextClass.dot >= 0 && nextClass.bracket >= 0) {
+      const potentialClass = text.substring(nextClass.dot + 1, nextClass.bracket).trim();
 
       // we dont want emprty classes or ones with a colon such as .example:hover
       if (potentialClass.length > 0 && potentialClass.indexOf(":") === -1) {
         classes.push(potentialClass);
       }
 
-      // grab the closing bracket so we skip anything that might have a '.' in
-      // it such as an image extension or opacity
-      const closingIndex = text.indexOf("}", bracketIndex);
-
-      nextIndex = text.indexOf(".", closingIndex);
-      bracketIndex = text.indexOf("{", nextIndex);
+      nextClass = this.findNextClass(text, nextClass.bracket);
     }
 
     return classes;
+  }
+
+  /**
+   * Tries to find the next CSS class by searching for a '.' followed
+   * by an '{' which is the start of a class declaration. If it finds
+   * a '}' before a '{' this means it is invalid and looks for the
+   * next '.' recursively.
+   * @param {string} text the text to search for the next class
+   * @param {number} index the index to start looking for a class
+   */
+  findNextClass(text, index) {
+    let dot = text.indexOf(".", index);
+    let i = dot;
+
+    if (dot === -1) return -1;
+
+    while(true) {
+      const char = text[++i];
+      if (char === '{') return { dot: dot, bracket: i };
+      if (char === '}') return this.findNextClass(text, i);
+    }
   }
 
   textareaChange(text) {
