@@ -39,8 +39,13 @@ class SnappyEditor extends Component {
     let nextIndex = text.indexOf(".", 0);
     let bracketIndex = text.indexOf("{", nextIndex);
 
-    while(nextIndex >= 0 && bracketIndex >= 0) {
-      classes.push(text.substring(nextIndex + 1, bracketIndex).trim());
+    while (nextIndex >= 0 && bracketIndex >= 0) {
+      const potentialClass = text.substring(nextIndex + 1, bracketIndex).trim();
+
+      // we dont want emprty classes or ones with a colon such as .example:hover
+      if (potentialClass.length > 0 && potentialClass.indexOf(":") === -1) {
+        classes.push(potentialClass);
+      }
 
       // grab the closing bracket so we skip anything that might have a '.' in
       // it such as an image extension or opacity

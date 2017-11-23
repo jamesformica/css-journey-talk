@@ -6,22 +6,22 @@ export const objects = [
   {
     type: "Editor",
     name: "Square",
-    snippet: "/snippets/square.css"
+    snippet: "/snippets/shapes/square.css"
   },
   {
     type: "Editor",
     name: "Circle",
-    snippet: "/snippets/circle.css"
+    snippet: "/snippets/shapes/circle.css"
   },
   {
     type: "Editor",
     name: "Semicircle",
-    snippet: "/snippets/semicircle.css"
+    snippet: "/snippets/shapes/semicircle.css"
   },
   {
     type: "Editor",
     name: "Triangle",
-    snippet: "/snippets/triangle.css"
+    snippet: "/snippets/shapes/triangle.css"
   },
   {
     type: "Title",
@@ -30,21 +30,21 @@ export const objects = [
   {
     type: "Editor",
     name: "Card",
-    snippet: "/snippets/card.css",
+    snippet: "/snippets/realworld/card.css",
   },
   {
     type: "Editor",
     name: "Badge",
-    snippet: "/snippets/badge.css",
+    snippet: "/snippets/realworld/badge.css",
   },
   {
     type: "Editor",
     name: "Hills",
-    snippet: "/snippets/hills.css",
+    snippet: "/snippets/realworld/hills.css",
   },
   {
     type: "Editor",
     name: "Banner",
-    snippet: "/snippets/banner.css",
+    snippet: "/snippets/realworld/banner.css",
   },
 ];
