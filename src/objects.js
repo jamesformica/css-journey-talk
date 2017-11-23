@@ -71,4 +71,14 @@ export const objects = [
     name: "Flip",
     snippet: "/snippets/animations/flip.css"
   },
+  {
+    type: "Editor",
+    name: "Orbit",
+    snippet: "/snippets/animations/orbit.css"
+  },
+  {
+    type: "Editor",
+    name: "Cat",
+    snippet: "/snippets/animals/cat.css"
+  },
 ];

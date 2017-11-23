@@ -1,0 +1,45 @@
+@keyframes orbit {
+  from {transform: rotate(0deg) translateX(180px); }
+  to {transform: rotate(360deg) translateX(180px); }
+}
+
+@keyframes slow-spin {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(-360deg); }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/stars.gif');
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper__orbit-cow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-image: url('/images/cow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-name: orbit;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.wrapper__orbit-moon {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-image: url('/images/cartoon-moon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-name: slow-spin;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
