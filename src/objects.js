@@ -58,7 +58,7 @@ export const objects = [
   },
   {
     type: "Editor",
-    name: "Scale",
+    name: "Library",
     snippet: "/snippets/animations/library.css"
   },
   {
