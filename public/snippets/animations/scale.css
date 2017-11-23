@@ -1,3 +1,9 @@
+@keyframes bounce {
+  0% {transform: scale(1); }
+  50% { transform: scale(1); }
+  100% {transform: scale(1); }
+}
+
 .ball {
   width: 200px;
   height: 200px;
@@ -8,10 +14,4 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease;
   box-shadow: 6px 3px 25px rgba(0,0,0,0.4);
-}
-
-@keyframes bounce {
-  0% {transform: scale(1); }
-  50% { transform: scale(1); }
-  100% {transform: scale(1); }
 }

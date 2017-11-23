@@ -1,10 +1,5 @@
 export const objects = [
   {
-    type: "Editor",
-    name: "Scale",
-    snippet: "/snippets/animations/scale.css"
-  },
-  {
     type: "Title",
     name: "Basic Shapes"
   },
@@ -55,5 +50,15 @@ export const objects = [
   {
     type: "Title",
     name: "Animations 💥"
+  },
+  {
+    type: "Editor",
+    name: "Scale",
+    snippet: "/snippets/animations/scale.css"
+  },
+  {
+    type: "Editor",
+    name: "Rotate",
+    snippet: "/snippets/animations/rotate.css"
   },
 ];
