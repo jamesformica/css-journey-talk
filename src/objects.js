@@ -58,6 +58,11 @@ export const objects = [
   },
   {
     type: "Editor",
+    name: "Scale",
+    snippet: "/snippets/animations/library.css"
+  },
+  {
+    type: "Editor",
     name: "Rotate",
     snippet: "/snippets/animations/rotate.css"
   },
