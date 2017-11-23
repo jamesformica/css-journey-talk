@@ -77,6 +77,10 @@ export const objects = [
     snippet: "/snippets/animations/orbit.css"
   },
   {
+    type: "Title",
+    name: "CSS ANIMALS 🐈 🐢 🐦"
+  },
+  {
     type: "Editor",
     name: "Cat",
     snippet: "/snippets/animals/cat.css"
@@ -85,5 +89,10 @@ export const objects = [
     type: "Editor",
     name: "Turtle",
     snippet: "/snippets/animals/turtle.css"
+  },
+  {
+    type: "Editor",
+    name: "Flamingo",
+    snippet: "/snippets/animals/flamingo.css"
   },
 ];
