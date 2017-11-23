@@ -81,4 +81,9 @@ export const objects = [
     name: "Cat",
     snippet: "/snippets/animals/cat.css"
   },
+  {
+    type: "Editor",
+    name: "Turtle",
+    snippet: "/snippets/animals/turtle.css"
+  },
 ];
