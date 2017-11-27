@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { objects } from "./objects";
-import Title from "./components/Title/Title";
+import About from "./components/About/About";
 import Fullpage from "./components/Fullpage/Fullpage";
 import Section from "./components/Section/Section";
 import Slide from "./components/Slide/Slide";
-import About from "./components/About/About";
 import SnappyEditor from "./components/SnappyEditor/SnappyEditor";
+import Title from "./components/Title/Title";
 import "./index.css";
 
 const getEditorSlide = object => {
@@ -18,16 +18,12 @@ const getTitleSlide = object => {
   return <Title name={object.name} primary={object.primary} secondary={object.secondary} />;
 };
 
-const getAboutSlide = () => {
-  return <About />;
-};
-
 const slides = objects.map(object => {
   return (
     <Slide key={object.name}>
       {object.type === "Editor" && getEditorSlide(object)}
       {object.type === "Title" && getTitleSlide(object)}
-      {object.type === "About" && getAboutSlide()}
+      {object.type === "About" && <About />}
     </Slide>
   );
 });
