@@ -3,7 +3,6 @@
   width: 70vw;
   height: calc(70vw / 2);
   margin: 0 auto;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -31,4 +30,14 @@
   border: 20px solid transparent;
   border-left-color: black;
   border-bottom-color: black;
+}
+
+.bigname {
+  position: absolute;
+  bottom: -6rem;
+  left: -3rem;
+  font-size: 22rem;
+  color: rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: -4rem;
 }

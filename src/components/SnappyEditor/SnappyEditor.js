@@ -94,6 +94,8 @@ class SnappyEditor extends Component {
 
   render() {
     return (
+      <div>
+      <span className={styles.bigname}>{this.props.name}</span>
       <div className={styles.editor}>
         <span className={styles.name}>{this.props.name}</span>
         <TextEditor
@@ -104,6 +106,7 @@ class SnappyEditor extends Component {
           objectClassNames={this.state.objectClassNames}
           css={this.state.css}
         />
+      </div>
       </div>
     );
   }

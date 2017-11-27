@@ -6,6 +6,7 @@ import Title from "./components/Title/Title";
 import Fullpage from "./components/Fullpage/Fullpage";
 import Section from "./components/Section/Section";
 import Slide from "./components/Slide/Slide";
+import About from "./components/About/About";
 import SnappyEditor from "./components/SnappyEditor/SnappyEditor";
 import "./index.css";
 
@@ -14,7 +15,11 @@ const getEditorSlide = object => {
 };
 
 const getTitleSlide = object => {
-  return <Title name={object.name} />;
+  return <Title name={object.name} primary={object.primary} secondary={object.secondary} />;
+};
+
+const getAboutSlide = () => {
+  return <About />;
 };
 
 const slides = objects.map(object => {
@@ -22,13 +27,16 @@ const slides = objects.map(object => {
     <Slide key={object.name}>
       {object.type === "Editor" && getEditorSlide(object)}
       {object.type === "Title" && getTitleSlide(object)}
+      {object.type === "About" && getAboutSlide()}
     </Slide>
   );
 });
 
 ReactDOM.render(
   <Fullpage>
-    <Section>{slides}</Section>
+    <Section>
+      {slides}
+    </Section>
   </Fullpage>,
   document.getElementById("root")
 );

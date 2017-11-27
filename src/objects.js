@@ -1,7 +1,18 @@
 export const objects = [
   {
     type: "Title",
-    name: "Basic Shapes"
+    name: "Zero to Flamingo",
+    primary: "magenta",
+    secondary: "darkmagenta"
+  },
+  {
+    type: "About"
+  },
+  {
+    type: "Title",
+    name: "Basic Shapes",
+    primary: "orange",
+    secondary: "darkorange"
   },
   {
     type: "Editor",
@@ -25,7 +36,9 @@ export const objects = [
   },
   {
     type: "Title",
-    name: "'Real World' Examples"
+    name: "Real World Examples",
+    primary: "turquoise",
+    secondary: "darkturquoise"
   },
   {
     type: "Editor",
@@ -49,7 +62,9 @@ export const objects = [
   },
   {
     type: "Title",
-    name: "Animations 💥"
+    name: "Animations",
+    primary: "red",
+    secondary: "darkred"
   },
   {
     type: "Editor",
@@ -83,7 +98,9 @@ export const objects = [
   },
   {
     type: "Title",
-    name: "CSS ANIMALS 🐈 🐢 🐦"
+    name: "ANIMALS",
+    primary: "orchid",
+    secondary: "darkorchid"
   },
   {
     type: "Editor",

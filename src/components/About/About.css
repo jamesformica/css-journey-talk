@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.circle, .square {
+  width: calc(100vw / 4);
+  height: calc(100vw / 4);
+}
+
+.circle {
+  border-radius: 50%;
+  background-image: url('/images/me_irl.png');
+  background-position: center;
+  background-size: cover;
+  border: 30px double var(--bg-colour);
+}
+
+.square {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: repeating-linear-gradient(-45deg, turquoise, turquoise 10px, darkturquoise 10px, darkturquoise 20px);
+  border: 10px dashed var(--bg-colour);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
