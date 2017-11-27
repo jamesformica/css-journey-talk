@@ -32,6 +32,8 @@ const slides = objects.map(object => {
   );
 });
 
+
+
 ReactDOM.render(
   <Fullpage>
     <Section>
@@ -40,3 +42,10 @@ ReactDOM.render(
   </Fullpage>,
   document.getElementById("root")
 );
+
+// prevent pressing Tab, it stuffs up FullPageJs
+document.body.onkeydown = (e) => {
+  if (e.which === 9 || e.code === 'Tab') {
+    e.preventDefault();
+  }
+}
