@@ -32,8 +32,6 @@ const slides = objects.map(object => {
   );
 });
 
-
-
 ReactDOM.render(
   <Fullpage>
     <Section>
