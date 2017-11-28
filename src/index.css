@@ -1,5 +1,5 @@
 :global {
-  @import "lib/jquery.fullpage.min.css";
+  @import "/lib/jquery.fullpage.min.css";
 }
 
 :root {
