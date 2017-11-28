@@ -13,7 +13,7 @@
   height: 200px;
   border: 2px solid red;
   transition: 0.2s;
-  background-image: url('/images/deadpool.jpg');
+  background-image: url('images/deadpool.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -23,7 +23,7 @@
   height: 200px;
   border: 2px solid red;
   transition: 0.2s;
-  background-image: url('/images/findingdory.jpg');
+  background-image: url('images/findingdory.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -33,7 +33,7 @@
   height: 200px;
   border: 2px solid red;
   transition: 0.2s;
-  background-image: url('/images/matrix.jpg');
+  background-image: url('images/matrix.jpg');
   background-size: cover;
   background-position: center;
 }
