@@ -17,7 +17,7 @@ export const objects = [
   {
     type: "Editor",
     name: "Square",
-    snippet: "/snippets/shapes/square.css"
+    snippet: "snippets/shapes/square.css"
   },
   {
     type: "Editor",
