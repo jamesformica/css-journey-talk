@@ -11,7 +11,7 @@
 .wrapper {
   width: 100%;
   height: 100%;
-  background-image: url('/images/stars.gif');
+  background-image: url('images/stars.gif');
 
   display: flex;
   justify-content: center;
@@ -22,7 +22,7 @@
   position: absolute;
   width: 120px;
   height: 120px;
-  background-image: url('/images/cow.png');
+  background-image: url('images/cow.png');
   background-size: contain;
   background-repeat: no-repeat;
   animation-name: orbit;
@@ -35,7 +35,7 @@
   position: absolute;
   width: 120px;
   height: 120px;
-  background-image: url('/images/cartoon-moon.png');
+  background-image: url('images/cartoon-moon.png');
   background-size: contain;
   background-repeat: no-repeat;
   animation-name: slow-spin;
