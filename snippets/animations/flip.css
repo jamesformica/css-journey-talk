@@ -1,0 +1,90 @@
+@keyframes flip {
+  from { transform: rotateX(0); }
+  to { transform: rotateX(0); z-index: 1; }
+}
+
+.gymnast {
+  position: absolute;
+  top: 40%;
+  left: calc(50% - 45px);
+  width: 90px;
+  animation-name: flip;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+.gymnast__head {
+  position: absolute;
+  top: calc(40% + 20px);
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(#CFBE9B, #AC9F81);
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.gymnast__body {
+  position: absolute;
+  top: calc(40% + 20px + 60px);
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 80px;
+  background: linear-gradient(to right, #3865FF, #1C3383);
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.gymnast__armone {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 15px;
+  height: 90px;
+  background: linear-gradient(to right, #CFBE9B, #AC9F81);
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.gymnast__armtwo {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 15px;
+  height: 90px;
+  background: linear-gradient(to right, #CFBE9B, #AC9F81);
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.gymnast__legone {
+  position: absolute;
+  top: calc(40% + 20px + 60px + 80px);
+  left: 15px;
+  width: 15px;
+  height: 70px;
+  background: linear-gradient(to right, #CFBE9B, #AC9F81);
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.gymnast__legtwo {
+  position: absolute;
+  top: calc(40% + 20px + 60px + 80px);
+  right: 15px;
+  width: 15px;
+  height: 70px;
+  background: linear-gradient(to right, #CFBE9B, #AC9F81);
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.gym-bar {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(#0DAFEE, #066489);
+}

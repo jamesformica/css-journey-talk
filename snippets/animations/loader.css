@@ -1,0 +1,38 @@
+@keyframes spin-one-way {
+  0% {transform: rotate(0deg); }
+  100% {transform: rotate(360deg); }
+}
+
+@keyframes spin-the-other {
+  0% {transform: rotate(0deg); }
+  100% {transform: rotate(-720deg); }
+}
+
+.outer {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-top-color: #2b90d9;
+  border-bottom-color: #2b90d9;
+  text-align: center;
+  animation-name: spin-one-way;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer__inner {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top-color: hotpink;
+  border-bottom-color: hotpink;
+  animation-name: spin-the-other;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+}

@@ -1,0 +1,67 @@
+@keyframes wheeee {
+  from { transform: rotate(0); }
+  to { transform: rotate(0); }
+}
+
+.wheel {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 15px solid #2E1915;
+  animation-name: wheeee;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+.wheel__spokeone {
+  position: absolute;
+  width: 10px;
+  height: calc(100% + 50px);
+  top: -25px;
+  left: calc(50% - 5px);
+  background: #4C2B21;
+}
+
+.wheel__spoketwo {
+  position: absolute;
+  width: 10px;
+  height: calc(100% + 50px);
+  top: -25px;
+  left: calc(50% - 5px);
+  background: #4C2B21;
+  transform: rotate(90deg);
+}
+
+.wheel__spokethree {
+  position: absolute;
+  width: 10px;
+  height: calc(100% + 50px);
+  top: -25px;
+  left: calc(50% - 5px);
+  background: #4C2B21;
+  transform: rotate(45deg);
+}
+
+.wheel__spokefour {
+  position: absolute;
+  width: 10px;
+  height: calc(100% + 50px);
+  top: -25px;
+  left: calc(50% - 5px);
+  background: #4C2B21;
+  transform: rotate(-45deg);
+}
+
+.ship-pole {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  top: calc(50% - 50px);
+  left: calc(50% - 30px);
+  background: linear-gradient(to right, #7C5835, #66442C);
+  border-radius: 30px 30px 0 0;
+}

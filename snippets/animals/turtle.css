@@ -1,0 +1,108 @@
+@keyframes swing {
+  25% {transform: translateY(-10px); }
+  50% {transform: translateY(-10px) translateX(-10px); }
+  75% {transform: translateY(0) translateX(-10px); }
+  100% {transform: translateY(0) translateX(0); }
+}
+
+@keyframes bob {
+  50% {transform: translateX(-10px); }
+  100% {transform: translateX(0); }
+}
+
+.tu-shell {
+  position: absolute;
+  top: calc(50% - 70px);
+  left: calc(50% - 70px);
+  width: 140px;
+  height: 70px;
+  border-radius: 70px 70px 0 0;
+  background: repeating-radial-gradient(#CCB920, #948516 20%);
+}
+
+.tu-body {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 70px);
+  width: 140px;
+  height: 30px;
+  background: linear-gradient(#86CF4D, #517F2E);
+}
+
+.tu-body__tu-foot-1 {
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(to right, #639C39, #3E6324);
+}
+
+.tu-body__tu-foot-2 {
+  position: absolute;
+  top: 30px;
+  right: 5px;
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(to right, #639C39, #3E6324);
+}
+
+.tu-body__tu-tail {
+  position: absolute;
+  top: 0;
+  right: -45px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-left: 30px solid #639C39;
+}
+
+.tu-head {
+  position: absolute;
+  top: calc(50% - 5px);
+  left: calc(50% - 120px);
+  width: 60px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(#86CF4D, #517F2E);
+  z-index: 3;
+}
+
+.tu-head__tu-eye {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  z-index: 4;
+}
+
+.tu-head__tu-eye:after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: black;
+}
+
+.tu-shell:hover ~ .tu-body > [class*="tu-body__tu-foot-"] {
+  animation-name: swing;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.tu-shell:hover ~ .tu-body > .tu-body__tu-foot-2 {
+  animation-delay: 1s;
+}
+
+.tu-shell:hover ~ .tu-head {
+  animation-name: bob;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
