@@ -5,7 +5,8 @@ class Fullpage extends Component {
     window.onload = () => {
       window.$("#fullpage").fullpage({
         controlArrows: false,
-        slidesNavigation: true
+        slidesNavigation: true,
+        loopHorizontal: false
       });
     };
   }
