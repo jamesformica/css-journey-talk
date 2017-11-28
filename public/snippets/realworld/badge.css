@@ -14,7 +14,3 @@
 .badge::after {
   content: '15';
 }
-
-.badge:hover {
-  background: radial-gradient(red, #00D0FF, red);
-}
