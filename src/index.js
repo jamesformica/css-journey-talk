@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import { objects } from "./objects";
 import About from "./components/About/About";
+import Close from "./components/Close/Close";
 import Fullpage from "./components/Fullpage/Fullpage";
 import Section from "./components/Section/Section";
 import Slide from "./components/Slide/Slide";
@@ -24,6 +25,7 @@ const slides = objects.map(object => {
       {object.type === "Editor" && getEditorSlide(object)}
       {object.type === "Title" && getTitleSlide(object)}
       {object.type === "About" && <About />}
+      {object.type === "Close" && <Close />}
     </Slide>
   );
 });

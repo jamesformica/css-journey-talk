@@ -98,7 +98,7 @@ export const objects = [
   },
   {
     type: "Title",
-    name: "ANIMALS",
+    name: "The Zoo",
     primary: "orchid",
     secondary: "darkorchid"
   },
@@ -116,5 +116,8 @@ export const objects = [
     type: "Editor",
     name: "Flamingo",
     snippet: "/snippets/animals/flamingo.css"
+  },
+  {
+    type: "Close"
   },
 ];
