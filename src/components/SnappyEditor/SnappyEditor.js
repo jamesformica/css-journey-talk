@@ -102,9 +102,9 @@ class SnappyEditor extends Component {
       <div>
         <span className={styles.bigname}>{this.props.name}</span>
 
-        {this.props.solution && <span className={styles.solution} onClick={() => this.solve()}>Solution</span>}
-
         <div className={styles.editor}>
+          {this.props.solution && <span className={styles.solution} onClick={() => this.solve()}>Solution</span>}
+
           <span className={styles.name}>{this.props.name}</span>
 
           <TextEditor
