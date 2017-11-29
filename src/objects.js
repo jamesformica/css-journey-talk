@@ -17,22 +17,26 @@ export const objects = [
   {
     type: "Editor",
     name: "Square",
-    snippet: "snippets/shapes/square.css"
+    snippet: "snippets/shapes/square.css",
+    solution: "snippets/shapes/square_solution.css"
   },
   {
     type: "Editor",
     name: "Circle",
-    snippet: "snippets/shapes/circle.css"
+    snippet: "snippets/shapes/circle.css",
+    solution: "snippets/shapes/circle_solution.css"
   },
   {
     type: "Editor",
     name: "Semicircle",
-    snippet: "snippets/shapes/semicircle.css"
+    snippet: "snippets/shapes/semicircle.css",
+    solution: "snippets/shapes/semicircle_solution.css"
   },
   {
     type: "Editor",
     name: "Triangle",
-    snippet: "snippets/shapes/triangle.css"
+    snippet: "snippets/shapes/triangle.css",
+    solution: "snippets/shapes/triangle_solution.css"
   },
   {
     type: "Title",

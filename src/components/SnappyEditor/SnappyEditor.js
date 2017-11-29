@@ -10,6 +10,9 @@ class SnappyEditor extends Component {
     this.state = {
       css: "still loading"
     };
+
+    this.solve = this.solve.bind(this);
+    this.textareaChange = this.textareaChange.bind(this);
   }
 
   componentWillMount() {
@@ -92,15 +95,21 @@ class SnappyEditor extends Component {
     });
   }
 
+  solve() {
+    this.getFile(this.props.solution, this.textareaChange);
+  }
+
   render() {
     return (
       <div>
       <span className={styles.bigname}>{this.props.name}</span>
+      {this.props.solution && <span className={styles.solution} onClick={() => this.solve()}>Solution</span>}
+
       <div className={styles.editor}>
         <span className={styles.name}>{this.props.name}</span>
         <TextEditor
           css={this.state.css}
-          textareaChange={this.textareaChange.bind(this)}
+          textareaChange={this.textareaChange}
         />
         <DopePreview
           objectClassNames={this.state.objectClassNames}

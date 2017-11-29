@@ -12,7 +12,7 @@ import Title from "./components/Title/Title";
 import "./index.css";
 
 const getEditorSlide = object => {
-  return <SnappyEditor name={object.name} snippet={object.snippet} />;
+  return <SnappyEditor name={object.name} snippet={object.snippet} solution={object.solution} />;
 };
 
 const getTitleSlide = object => {
