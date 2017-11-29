@@ -6,7 +6,8 @@ export const objects = [
     secondary: "darkmagenta"
   },
   {
-    type: "About"
+    type: "About",
+    name: "About"
   },
   {
     type: "Title",
@@ -122,6 +123,7 @@ export const objects = [
     snippet: "snippets/animals/flamingo.css"
   },
   {
-    type: "Close"
+    type: "Close",
+    name: "Close"
   },
 ];
