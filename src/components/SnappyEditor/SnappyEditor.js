@@ -16,7 +16,7 @@ class SnappyEditor extends Component {
   }
 
   componentWillMount() {
-    this.getFile(this.props.snippet, text => {
+    this.getFile(this.props.snippet).then(text => {
       this.setState({
         css: text,
         objectClassNames: this.getObjectClassNames(text)
@@ -24,23 +24,31 @@ class SnappyEditor extends Component {
     });
   }
 
+  solve =() => this.getFile(this.props.solution).then(this.textareaChange);
+
+  textareaChange(text) {
+    this.setState({
+      css: text
+    });
+  }
+
   /**
    * Makes an Http GET request to the location of the file then calls
    * the callback function passing through the contents of the file.
    * @param {string} file the public url of a file to retrieve
-   * @param {*} callback a function to call when the request is done
    */
-  getFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = () => {
-      if (rawFile.readyState === 4) {
-        if (rawFile.status === 200 || rawFile.status === 0) {
-          callback(rawFile.responseText.trim());
+  getFile(file) {
+    const promise = new Promise((resolve, reject) => {
+      const rawFile = new XMLHttpRequest();
+      rawFile.open("GET", file, true);
+      rawFile.onreadystatechange = () => {
+        if (rawFile.readyState === 4 && (rawFile.status === 200 || rawFile.status === 0)) {
+          resolve(rawFile.responseText.trim());
         }
-      }
-    };
-    rawFile.send(null);
+      };
+      rawFile.send(null);
+    });
+    return promise;
   }
 
   /**
@@ -89,33 +97,26 @@ class SnappyEditor extends Component {
     }
   }
 
-  textareaChange(text) {
-    this.setState({
-      css: text
-    });
-  }
-
-  solve() {
-    this.getFile(this.props.solution, this.textareaChange);
-  }
-
   render() {
     return (
       <div>
-      <span className={styles.bigname}>{this.props.name}</span>
-      {this.props.solution && <span className={styles.solution} onClick={() => this.solve()}>Solution</span>}
+        <span className={styles.bigname}>{this.props.name}</span>
 
-      <div className={styles.editor}>
-        <span className={styles.name}>{this.props.name}</span>
-        <TextEditor
-          css={this.state.css}
-          textareaChange={this.textareaChange}
-        />
-        <DopePreview
-          objectClassNames={this.state.objectClassNames}
-          css={this.state.css}
-        />
-      </div>
+        {this.props.solution && <span className={styles.solution} onClick={() => this.solve()}>Solution</span>}
+
+        <div className={styles.editor}>
+          <span className={styles.name}>{this.props.name}</span>
+
+          <TextEditor
+            css={this.state.css}
+            textareaChange={this.textareaChange}
+          />
+
+          <DopePreview
+            objectClassNames={this.state.objectClassNames}
+            css={this.state.css}
+          />
+        </div>
       </div>
     );
   }
