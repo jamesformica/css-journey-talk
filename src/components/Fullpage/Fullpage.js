@@ -7,7 +7,7 @@ class Fullpage extends Component {
         controlArrows: false,
         slidesNavigation: true,
         loopHorizontal: false,
-        afterLoad: () => document.getElementById("blanket").classList.add("hide")
+        afterLoad: (a, index) => index === 1 && document.getElementById("blanket").classList.add("hide"),
       });
     };
   }
