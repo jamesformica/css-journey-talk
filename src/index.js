@@ -19,26 +19,22 @@ const getTitleSlide = object => {
   return <Title name={object.name} primary={object.primary} secondary={object.secondary} />;
 };
 
-const slides = objects.map((group, index) => {
+const slides = objects.map((object, index) => {
   return (
-    <Section key={index}>
-      {group.map(object => {
-        return (
-          <Slide key={object.name}>
-            {object.type === "Editor" && getEditorSlide(object)}
-            {object.type === "Title" && getTitleSlide(object)}
-            {object.type === "About" && <About />}
-            {object.type === "Close" && <Close />}
-          </Slide>
-        )
-      })}
-    </Section>
-  );
-});
+    <Slide key={object.name}>
+      {object.type === "Editor" && getEditorSlide(object)}
+      {object.type === "Title" && getTitleSlide(object)}
+      {object.type === "About" && <About />}
+      {object.type === "Close" && <Close />}
+    </Slide>
+  )
+})
 
 ReactDOM.render(
   <Fullpage>
-    {slides}
+    <Section>
+      {slides}
+    </Section>
   </Fullpage>,
   document.getElementById("root")
 );

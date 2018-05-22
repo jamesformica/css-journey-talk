@@ -19,17 +19,23 @@
   border-radius: 50%;
   background-position: center;
   background-size: cover;
-  border: 30px double var(--bg-colour);
+  border: 0.5rem solid #a171d7;
+}
+
+.logo {
+  width: 70%;
+  border-radius: 1rem;
 }
 
 .square {
   font-size: 1.8rem;
   font-weight: bold;
-  background: repeating-linear-gradient(-45deg, turquoise, turquoise 10px, darkturquoise 10px, darkturquoise 20px);
+  background: repeating-linear-gradient(-45deg, #7038ba, #7038ba 10px, #a171d7 10px, #a171d7 20px);
   border: 10px dashed var(--bg-colour);
-  color: black;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px 2px black;
 }
